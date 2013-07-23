@@ -25,16 +25,17 @@ $(function(){
 		
 	$screen.each(function(i){
 				var num = i + 1;
+                var id = $(this).attr('id');
 				var title = $(this).attr('title');
+                var desc = $(this).attr('description');
 				screenList.push(title);
 				$('#0' + num).html('Screen ' + num + ': ' + $(this).attr('title'));
+                
 				menuList.append(
 					$('<li />', {
-						text: 'Screen ' + num + ': ' + title,
-						'class': 'screenList',
-						id: '0' + num
-					})
-				);
+						'class': 'lesson',
+						id: 'Screen_0' + num
+					}).html('<a href="#screenView' + num + '"><img src="images/screen' + num + '.png"><span>' + title + '</span><p>' + desc +'</p></a>'));
 		});	
 	
 	var	numScreen = $screen.length,
