@@ -1,0 +1,66 @@
+#mainTitle{
+    padding-left: .2em;   
+}
+
+#logo{
+	float:right !important;
+	padding-right: .5em !important;
+	width: 5em !important;
+	height: 1em !important;
+}
+.lessonTitle{
+	text-align: left !important;
+	font-size: 1em !important;
+	padding-left: 1em !important;
+}
+#homeButton{
+	float: right !important;
+}
+
+span{
+	font-size:12px;
+	white-space: normal;
+}
+.lesson .ui-btn-text .ui-li-desc {
+	font-size:8px;
+}
+
+.ui-block-a{
+    height: 2em;   
+}
+.ui-input-text.ui-body-c{
+	margin: .5em 0 !important;
+	padding: 0 .4em !important;
+}
+
+.ui-title{
+	text-align: center;
+	min-height: 2.5em;
+	font-size: .6em;
+    padding-right: .2em;
+	padding-left: 8em;
+	margin: .8em 1% !important;
+	text-overflow: ellipsis;
+}
+#logButton, #menuButton{
+    zoom: 1;   
+}
+
+<!-------------------------------- Windows Phone -------------------------------->
+/*.ui-content{
+    margin-top: 4em; 
+    margin-bottom: 3em;
+}
+.ui-header.ui-bar-a, .ui-header.ui-bar-c{
+    position:fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    
+}
+.ui-footer.ui-bar-a{
+	position:fixed;
+    bottom: 0;
+    width: 100%;
+   
+}*/
