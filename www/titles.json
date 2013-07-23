@@ -1,0 +1,34 @@
+{"course": {
+    "moduleTitle": "Skillpad Prototype Lesson Player",
+    "moduleCode": "Code: SLP-001-01",
+    "section":{
+      "screen":[
+        {
+          "id": "Screen_01",
+          "title": "Why you should take this module",
+          "description": "Screen 1 description here."
+        },
+        {
+          "id": "Screen_02",
+          "title": "The location and function of the face seals",
+          "description": "Screen 2 description here."
+        },
+        {
+          "id": "Screen_03",
+          "title": "Components of the seal assemblies",
+          "description": "Screen 3 description here."
+        },
+        {
+          "id": "Screen_04",
+          "title": "Demounting of the seal assemblies",
+          "description": "Screen 4 description here."
+        },
+        {
+          "id": "Screen_05",
+          "title": "Dissassembly",
+          "description": "Screen 5 description here."
+        }
+      ]
+    }
+  }
+}
