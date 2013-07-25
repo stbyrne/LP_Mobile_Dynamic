@@ -60,24 +60,3 @@ jsonTitles(function(titles){
     });
 
 });
-
-
-
-
-
-
-
-
-
-
-	
-
-
-	
-
-
-
-
-
-
-
