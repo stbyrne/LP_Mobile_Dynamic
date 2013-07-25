@@ -4,6 +4,7 @@ function jsonTitles(holdData){
 
     $.ajax({
         type: 'GET',
+        /*url: 'titles.json',*/
         url: 'http://www.skillpad.com/uploads/json/titles.json?callback=?',
         async: false,
         jsonpCallback: 'jsonCallback',
@@ -43,20 +44,48 @@ jsonTitles(function(titles){
                         }).html('<a href="#screenView' + num + '"><img src="images/screen' + num + '.png"><span>' + title + '</span><p>' + desc +'</p></a>'));
             });
         
-       /* var	numScreen = $screen.length,
-            screen = 1,
-            playing = 1,
-            movie = $('#myMovie'),
-            lessonTitle=$('.lessonTitle'),
-            screenTitle = $('.screenTitle'),
-            lessonCode = $('.lessonCode'),
-            $nav = $('#nav');
-            //buttonText=document.getElementById('playButton');
+        	
+            var lessonTitle=$('.lessonTitle'),
+                screenTitle = $('.screenTitle'),
+                lessonCode = $('.lessonCode');
+          
         
         screenTitle.html(screenList[screen - 1]);
         lessonTitle.html(moduleTitle);
-        lessonCode.html(moduleCode);	      
-            */
+        lessonCode.html(moduleCode);
+    
+    $('head').append('<script src="js/jquery.mobile-1.3.1.min.js"></script>');
+    $('#home').attr('id', 'home');
+    
+   /* menuList.attr({
+        'data-role': 'listview',
+        'data-theme': 'c',
+        'class': 'ui-icon-alt'
+    });*/
+            
     });
+    
+   
 
 });
+
+
+
+
+
+
+
+
+
+
+	
+
+
+	
+
+
+
+
+
+
+
