@@ -3,10 +3,12 @@
 }
 
 #logo{
-	float:right !important;
+	right: 10px;
+    top: 10px;
 	padding-right: .5em !important;
 	width: 5em !important;
 	height: 1em !important;
+    position:absolute;
 }
 .lessonTitle{
 	text-align: left !important;
