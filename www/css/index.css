@@ -1,52 +1,75 @@
 #mainTitle{
-    padding-left: .2em;   
+    padding-left: .5em;
+    margin-bottom: 0;
+    font: bold 1.4em Calibri, Arial, Verdana, sans-serif;
 }
-
+#lessoncode{
+    padding-left: .7em; 
+    margin: .2em 0;
+    font: 1em Calibri, Arial, Verdana, sans-serif;
+}
 #logo{
-	right: 10px;
-    top: 10px;
-	padding-right: .5em !important;
-	width: 5em !important;
-	height: 1em !important;
-    position:absolute;
+	right: .8em;
+    top: .8em;
+	width: 5em;
+	height: 1em;
+    position: absolute;
 }
 .lessonTitle{
-	text-align: left !important;
-	font-size: 1em !important;
-	padding-left: 1em !important;
+	text-align: left;
+	font-size: 1em;
+	padding-left: 1.5em;
 }
 #homeButton{
-	float: right !important;
+	float: right;
+}
+.ui-li-thumb{
+    margin-top: 1em;
+    opacity: .8;
+    position: absolute;
+}
+span{
+	white-space: normal;
+    font: bold 1.1em Calibri, Arial, Verdana, sans-serif;
 }
 
-span{
-	font-size:12px;
-	white-space: normal;
-}
 .lesson .ui-btn-text .ui-li-desc {
-	font-size:8px;
+    padding-top: .4em;
+    padding-left: .5em;
+	font: .9em Calibri, Arial, Verdana, sans-serif;
+    white-space: normal;
 }
 
 .ui-block-a{
     height: 2em;   
 }
 .ui-input-text.ui-body-c{
-	margin: .5em 0 !important;
-	padding: 0 .4em !important;
+	margin: .5em 0;
+	padding: 0 .4em;
 }
 
-.ui-title{
-	text-align: center;
-	min-height: 2.5em;
-	font-size: .6em;
-    padding-right: .2em;
-	padding-left: 8em;
-	margin: .8em 1% !important;
-	text-overflow: ellipsis;
+.ui-header .ui-title{
+	text-align: left !important;
+	/*min-height: 2.5em;*/
+	font: bold 1.4em Calibri, Arial, Verdana, sans-serif !important;
+    /*padding-right: .2em !important;
+	padding-left: 1em !important;*/
+	margin: .6em 2.5em !important;
+	text-overflow: ellipsis !important;
 }
 #logButton, #menuButton{
     zoom: 1;   
 }
+#submit{
+    width: 12em;   
+}
+.ui-icon-nodisc{
+    zoom: 1.5;   
+}
+h1, h2, h3, h4, h5, h6, p{
+    font-family: Calibri, Arial, Verdana, sans-serif !important;
+}
+
 
 <!-------------------------------- Windows Phone -------------------------------->
 /*.ui-content{
