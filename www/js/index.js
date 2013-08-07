@@ -29,6 +29,7 @@ jsonTitles(function(titles){
             moduleTitle = titles.course.moduleTitle,
             moduleCode = titles.course.moduleCode,
             menuList = $('#list'),
+            collapseList = $('#collapseList'),
             $screen = $(titles.course.section.screen),
             $body = $('body');
             
@@ -39,7 +40,8 @@ jsonTitles(function(titles){
                     var num = i + 1,
                         id = $(this).attr('id'),
                         title = $(this).attr('title'),
-                        desc = $(this).attr('description');
+                        desc = $(this).attr('description'),
+                        content = $(this).attr('content');
             
                     screenList.push(title);
                     $('#0' + num).html('Screen ' + num + ': ' + $(this).attr('title'));
@@ -65,7 +67,7 @@ jsonTitles(function(titles){
                         'data-theme': 'c',
                         id: 'header' + num
                     }));
-                    $('#header' + num).html('<h1>Screen ' + num + ':<br>' + title + '</h1><a href="index.html" data-role="button" class="ui-icon-nodisc ui-btn-right ui-icon-alt" data-corners="true" data-theme="c" data-icon="home" data-iconpos="notext">Home</a>');
+                    $('#header' + num).html('<h1>Screen ' + num + ':<br>' + title + '</h1><a href="#home" data-role="button" class="ui-icon-nodisc ui-btn-right ui-icon-alt" data-corners="true" data-theme="c" data-icon="home" data-iconpos="notext">Home</a>');
             
                     $('#screenView' + num).append($('<div />', {
                         'data-role': 'content',
@@ -86,8 +88,24 @@ jsonTitles(function(titles){
                     $('#navbar' + num).append($('<ul>', {
                         html: '<li><a href="#menu" id="menuButton" data-role="button" data-icon="bars">Menu</a></li>'
                     }));
+            
+///////////////////Creates the menu screen//////////////// 
+    
+                    collapseList.append($('<div>', {
+                        'data-role': 'collapsible',
+                        id: 'collapseList' + num,
+                        'data-theme': 'e'
+                    }));
+            
+                    $('#collapseList' + num).html('<h3>' + title + '</h3><p><a href="#screenView' + num + '">Click to view Screen ' + num + '</a></p><p>' + content + '</p>');
+    
+    
+//////////////////////////////////////////////////////////
+            
             });
         	
+  
+    
             var lessonTitle=$('.lessonTitle'),
                 screenTitle = $('.screenTitle'),
                 lessonCode = $('.lessonCode');
@@ -98,6 +116,7 @@ jsonTitles(function(titles){
     
         /*$('head').append('<link rel="stylesheet" href="js/jquery.mobile-1.3.1.min.css" />');
         $('head').append('<link rel="stylesheet" href="js/jquery.mobile.structure-1.3.1.min.css" />');*/
+        /*$('head').append('<link rel="stylesheet" href="css/index.css"/>');*/
         $('head').append('<script src="js/jquery.mobile-1.3.1.min.js"></script>');
         $('#home').attr('id', 'home');
         $(document).on('pagebeforeshow', function(){
