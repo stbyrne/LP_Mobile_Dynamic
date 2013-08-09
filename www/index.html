@@ -5,8 +5,8 @@
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=device-dpi" />
 	
 	<link rel="stylesheet" href="css/index.css"/>
-	<link rel="stylesheet" href="js/jquery.mobile-1.3.1.min.css" />
-	<link rel="stylesheet" href="js/jquery.mobile.structure-1.3.1.min.css" />
+	<link rel="stylesheet" href="js/jquery.mobile-1.3.2.min.css" />
+	<link rel="stylesheet" href="js/jquery.mobile.structure-1.3.2.min.css" />
 	
 	<script type="text/javascript" charset="utf-8" src="phonegap.js" ></script>
 	<script src="js/jq.js"></script>
@@ -23,7 +23,7 @@
 	</script>
     
     <script src="js/index.js"></script>
-    <!--<script src="js/jquery.mobile-1.3.1.min.js"></script-->>
+    <!--<script src="js/jquery.mobile-1.3.2.min.js"></script-->>
 	
     <script type="text/javascript">
 	
@@ -46,7 +46,10 @@
 	</script>
 	
 </head>
+    
 <body onload="onBodyLoad()" >
+<!-------------------------------------------------------Home Page------------------------------------------------------------->
+    
 	<div class="app" id="home" data-role="page">
 	
 		<div id="mainHeader" class="title" data-role="header" data-position="fixed" data-theme="c">
@@ -58,7 +61,7 @@
 		</div>
 			
 		<div data-role="content">
-			<ul id="list" data-role="listview" data-theme="c" class="ui-icon-alt">
+			<ul id="list" data-role="listview" data-inset="true" data-theme="c" class="ui-icon-alt">
 				
 			</ul>
 		</div>
@@ -72,21 +75,31 @@
 		</div>
 		</div>
 		
-	</div><!--home page-->
+	</div>
 	
-<!-------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------Login Page------------------------------------------------------------>
 	
-	<div id="log" data-role="page" data-add-back-btn="true" data-corners="false"><!--Login page-->
+	<div id="log" data-role="page" data-add-back-btn="true">
 	
 		<div data-role="header" data-position="fixed" data-theme="c">
 			<h1>Login<br>Enter your password and click Submit.</h1>
+            
 			<a href="#home" data-role="button" class="ui-icon-nodisc ui-btn-right ui-icon-alt" data-corners="true" data-theme="c" data-icon="home" data-iconpos="notext">Home</a>
+            
+            
 		</div>
+        
 		<div data-role="content">
+             
 		<div data-role="controlgroup" data-corners="true" >
 		<input type="text" />
 		<a href="#home" id="submit" data-role="button" data-theme="b" data-icon="grid" data-iconpos="right">Submit</a>
 		</div>
+            
+        <div data-role="controlgroup" id="slideGroup" data-theme="a">
+                <a href="#left-panel" id="slideLeft">||</a>
+                <a href="#right-panel" id="slideRight">||</a>
+        </div>
 			
 		</div>
 		
@@ -97,9 +110,31 @@
 			</ul>
 		</div>
 		</div>
+        
+<!------------------------------------------------------Slide Content Left Panel-------------------------------------------------------------->
+        
+        <div data-role="panel" id="left-panel" data-theme="b">
+            <div data-role="controlgroup">
+                <a href="#" data-rel="close" data-role="button" data-mini="true" data-icon="delete" data-iconpos="right">Tap to close</a>
+                <p>Left reveal panel.</p>
+            </div>
+            <div data-role="content">
+			<ul id="listLeft" data-role="listview" data-theme="c">
+				
+			</ul>
+		</div>
+        </div>
+    <!------------------------------------------------------Slide Content Right Panel-------------------------------------------------------------->
+        <div data-role="panel" id="right-panel" data-display="push" data-position="right" data-theme="c">
+            <div data-role="controlgroup">
+                <a href="#" data-rel="close" data-role="button" data-mini="true" data-icon="delete" data-iconpos="left">Tap to close</a>
+                <p>Right push panel.</p>
+            </div>
+        </div>
+        
 	</div>
-	
-<!-------------------------------------------------------------------------------------------------------------------->
+   
+<!--------------------------------------------------------------------------------------------------------------------------------->
 	
 <!--	<div id="screenView1" data-role="page"  data-add-back-btn="true">Screen 1 page
 	
@@ -190,3 +225,4 @@
 	
 </body>
 </html>
+

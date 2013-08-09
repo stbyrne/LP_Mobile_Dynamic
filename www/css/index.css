@@ -23,11 +23,11 @@
 #homeButton{
 	float: right;
 }
-.ui-li-thumb{
+/*.ui-li-thumb{
     margin-top: 1em;
     opacity: .8;
     position: absolute;
-}
+}*/
 span{
 	white-space: normal;
     font: bold 1.1em Calibri, Arial, Verdana, sans-serif;
@@ -64,28 +64,57 @@ span{
     width: 12em;   
 }
 .ui-icon-nodisc{
-    zoom: 1.5;   
+    zoom: 1.4;   
+}
+
+#slideLeft{
+    -webkit-border-radius: 0 5px 5px 0;
+    position:absolute;
+    margin-top: 1.2em;
+    padding: 1em .2em;
+    left:0;
+    color: #7b7b7b;
+}
+#slideRight{
+    -webkit-border-radius: 5px 0 0 5px !important;
+    position:absolute;
+    margin-top: 1.2em;
+    padding: 1em .2em;
+    right: 0;
+    color: #7b7b7b;
+}
+.ui-collapsible-content{
+    background: -webkit-linear-gradient(top, #feffff, #f0fbff) !important;   
 }
 h1, h2, h3, h4, h5, h6, p{
     font-family: Calibri, Arial, Verdana, sans-serif !important;
 }
-
-
-<!-------------------------------- Windows Phone -------------------------------->
-/*.ui-content{
-    margin-top: 4em; 
-    margin-bottom: 3em;
+span .ui-icon .ui-icon-plus{
+    zoom: .6;   
 }
-.ui-header.ui-bar-a, .ui-header.ui-bar-c{
-    position:fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
+.ui-link{
+    text-decoration:none; 
+    background: -webkit-linear-gradient(top, #fafafa, #efefef);
+    -webkit-box-shadow: 0 0 2px #4a4a4a;
+    border-radius: 5px;
+    padding: .2em;
     
 }
-.ui-footer.ui-bar-a{
-	position:fixed;
-    bottom: 0;
-    width: 100%;
-   
+
+#log * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+/* Arrow only buttons in the header. */
+/*#log .ui-header .ui-btn {
+    background: none;
+    border: none;
+    top: 9px;
 }*/
+#log .ui-header .ui-btn-inner {
+    border: none;
+}
+
