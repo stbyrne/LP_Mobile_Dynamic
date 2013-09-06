@@ -29,10 +29,7 @@
 	
 	function onBodyLoad()
 	{		
-		document.addEventListener("deviceready", onDeviceReady, false);
-        setTimeout(function(){
-            navigator.splashscreen.hide(), 2000
-        });
+		document.addEventListener("deviceready", onDeviceReady, false);  
         
 	}
 	
@@ -44,6 +41,7 @@
 	{
     // Used by unit tests to tell when the page is loaded.
     window.pageIsLoaded = true;
+    navigator.splashscreen.hide();
 		// do your thing!
 		// navigator.notification.alert("Cordova is working");     
 	}	
