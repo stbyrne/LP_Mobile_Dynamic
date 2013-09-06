@@ -31,7 +31,7 @@
 	{		
 		document.addEventListener("deviceready", onDeviceReady, false);
         setTimeout(function(){
-            cordova.exec(null, null, "SplashScreen", "hide", []), 2000
+            navigator.splashscreen.hide(), 2000
         });
         
 	}
