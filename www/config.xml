@@ -55,7 +55,7 @@
     <preference name="android-minSdkVersion" value="7" /> <!-- minimum Android 2.1 -->
     <!-- <preference name="android-maxSdkVersion" value="18" /> maximum Android 4.3 -->
     <preference name="android-installLocation" value="auto" />
-    <preference name="splash-screen-duration" value="3000" />
+    <preference name="splash-screen-duration" value="3500" />
     <preference name="load-url-timeout" value="20000" />
 
     <icon src="icon.png" />
