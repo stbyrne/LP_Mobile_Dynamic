@@ -30,6 +30,7 @@
 	function onBodyLoad()
 	{		
 		document.addEventListener("deviceready", onDeviceReady, false);
+        navigator.splashscreen.hide();
 	}
 	
 	/* When this function is called, Cordova has been initialized and is ready to roll */
@@ -113,19 +114,19 @@
         
 <!------------------------------------------------------Slide Content Left Panel-------------------------------------------------------------->
         
-        <div data-role="panel" id="left-panel" data-theme="c">
+        <div data-role="panel" id="left-panel" data-theme="a">
             <div data-role="controlgroup">
                 <a href="#" data-rel="close" data-role="button" data-mini="true" data-icon="delete" data-iconpos="right">Tap to close</a>
                 <p>Left reveal panel.</p>
             </div>
             <div data-role="content">
-			<ul id="listLeft" data-role="listview" data-theme="b">
+			<ul id="listLeft" data-role="listview" data-theme="a">
 				
 			</ul>
 		</div>
         </div>
     <!------------------------------------------------------Slide Content Right Panel-------------------------------------------------------------->
-        <div data-role="panel" id="right-panel" data-display="push" data-position="right" data-theme="c">
+        <div data-role="panel" id="right-panel" data-display="push" data-position="right" data-theme="a">
             <div data-role="controlgroup">
                 <a href="#" data-rel="close" data-role="button" data-mini="true" data-icon="delete" data-iconpos="left">Tap to close</a>
                 <p>Right push panel.</p>
