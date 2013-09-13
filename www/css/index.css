@@ -1,10 +1,7 @@
 #mainTitle{
     margin-bottom: 0;
     font: bold 1em Calibri, Arial, Verdana, sans-serif !important;
-<<<<<<< HEAD
     text-overflow: ellipsis !important;
-=======
->>>>>>> edcbe8bfaccbb8e91d8aa4688e56eddc1734f518
 }
 #lessoncode{
     padding-left: .6em;
@@ -17,7 +14,6 @@
 .ui-collapsible-heading .ui-btn-text {
     font: .6em Calibri, Arial, Verdana, sans-serif !important;      
 }
-<<<<<<< HEAD
 .media{
     width: 100%;
     height: 100%;
@@ -26,11 +22,6 @@
 #logo{
 	right: .5em;
     bottom: .5em;
-=======
-#logo{
-	right: .8em;
-    top: .8em;
->>>>>>> edcbe8bfaccbb8e91d8aa4688e56eddc1734f518
 	width: 5em;
 	height: 1em;
     position: absolute;
@@ -167,11 +158,7 @@ span .ui-icon .ui-icon-plus{
     zoom: 1.5;         
     }
     #mainTitle, 
-<<<<<<< HEAD
     .ui-header .ui-title{
-=======
-    h1 .ui-title{
->>>>>>> edcbe8bfaccbb8e91d8aa4688e56eddc1734f518
     margin-bottom: 0;
     font: bold 1.5em Calibri, Arial, Verdana, sans-serif !important;
     }

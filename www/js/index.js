@@ -80,11 +80,7 @@ jsonTitles(function(titles){
                         id: 'video' + num
                     }));
             
-<<<<<<< HEAD
                     $('#video' + num).html('<video id="myMovie0' + num + '" class="media" controls fullscreen poster="icon.png"><source src="http://www.skillpad.com/uploads/videos/Screen_0' + num + '.mp4" type="video/mp4">No connection! Please try again.</video>');
-=======
-                    $('#video' + num).html('<video id="myMovie0' + num + '" controls fullscreen width="100%" height="100%" poster="icon.png"><source src="http://www.skillpad.com/uploads/videos/Screen_0' + num + '.mp4" type="video/mp4">No connection! Please try again.</video>');
->>>>>>> edcbe8bfaccbb8e91d8aa4688e56eddc1734f518
             
 /*                    $('#screenView' + num).append($('<div />', {
                         'data-role': 'footer',
