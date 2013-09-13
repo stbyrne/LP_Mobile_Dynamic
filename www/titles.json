@@ -1,33 +1,39 @@
 jsonCallback(
 	{"course": {
-		"moduleTitle": "Skillpad Mobile Lesson Player",
-		"moduleCode": "Code: SMLP-001-01",
-		"section":{
-		  "screen":[
+        "moduleTitle": "Skillpad Mobile Lesson Player",
+        "moduleCode": "Code: SMLP-001-01",
+	       "section":{
+		      "screen":[
 			{
-			  "id": "Screen_01",
-			  "title": "Dynamic test",
-			  "description": "Screen 1 description here."
+			"id": "Screen_01",
+			"title": "This is screen 1",
+			"description": "Screen 1 description here.",
+            "content": "Enter a description of the screens content here. You can include a breif or extended overview including objectives and some relevant keywords!"
 			},
 			{
-			  "id": "Screen_02",
-			  "title": "The location and function of the face seals",
-			  "description": "Screen 2 description here."
+			"id": "Screen_02",
+			"title": "The location and function of the face seals",
+			"description": "Screen 2 description here.",
+            "content": "Enter a description of the screens content here. You can include a breif or extended overview including objectives and some relevant keywords!"
+            
 			},
 			{
-			  "id": "Screen_03",
-			  "title": "Components of the seal assemblies",
-			  "description": "Screen 3 description here."
+			"id": "Screen_03",
+			"title": "Components of the seal assemblies",
+			"description": "Screen 3 description here.",
+            "content": "Enter a description of the screens content here. You can include a breif or extended overview including objectives and some relevant keywords!"
 			},
 			{
-			  "id": "Screen_04",
-			  "title": "Demounting of the seal assemblies",
-			  "description": "Screen 4 description here."
+			"id": "Screen_04",
+			"title": "Demounting of the seal assemblies",
+			"description": "Screen 4 description here.",
+            "content": "Enter a description of the screens content here. You can include a breif or extended overview including objectives and some relevant keywords!"
 			},
 			{
-			  "id": "Screen_05",
-			  "title": "Dissassembly",
-			  "description": "Screen 5 description here."
+			"id": "Screen_05",
+			"title": "Dissassembly",
+			"description": "Screen 5 description here.",
+            "content": "Enter a description of the screens content here. You can include a breif or extended overview including objectives and some relevant keywords!"
 			}
 		  ]
 		}

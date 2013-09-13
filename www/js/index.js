@@ -12,12 +12,11 @@ function jsonTitles(holdData){
         jsonpCallback: 'jsonCallback',
         contentType: "application/json",
         dataType: 'jsonp',
+        
         success: function(data) {
            holdData(data);
-        },
-        error: function(e) {
-           console.log(e.message);
         }
+        
     });
 }
     
@@ -51,59 +50,62 @@ jsonTitles(function(titles){
             
                     menuList.append(
                         $('<li />', {
-                            'class': 'lesson',
-                            id: 'Screen_0' + num
-                        }).html('<a href="#screenView' + num + '"><img src="images/screen' + num + '.png"><span>' + title + '</span><p>' + desc +'</p></a>'));
+                            id: 'Screen_0' + num,
+                        }).html('<a href="#screenView' + num + '"><img src="images/screen' + num + '.png"><h2>' + title + '</h2><p>' + desc +'</p><p class="ui-li-aside">empty</p></a>'));
             
 ///////////////////Creates the left slide list of screens////////////////
             
                     listLeft.append(
                         $('<li />', {
-                            'class': 'lesson',
+                            'class': 'lesson'
                         }).html('<a href="#screenView' + num + '"><span>' + title + '</span></a>'));
             
  ///////////////////Creates the individual pages for each screen////////////////
                     $body.append($('<div />', {
                         id: 'screenView' + num,
-                        'data-role': 'page',
-                        'data-add-back-btn': 'true'
-                    
+                        'data-role': 'page'
                     }));
+            
             //.html('<h1>Screen ' + num + ':<br>' + title + '</h1><a href="index.html" data-role="button" class="ui-icon-nodisc ui-btn-right ui-icon-alt" data-corners="true" data-theme="c" data-icon="home" data-iconpos="notext">Home</a>')
                     $('#screenView' + num).append($('<div />', {
                         'data-role': 'header',
                         'data-theme': 'c',
                         id: 'header' + num
                     }));
-                    $('#header' + num).html('<h1>Screen ' + num + ':<br>' + title + '</h1><a href="#home" data-role="button" class="ui-icon-nodisc ui-btn-right ui-icon-alt" data-corners="true" data-theme="c" data-icon="home" data-iconpos="notext">Home</a>');
+            
+                    $('#header' + num).html('<a href="#left-panel" data-role="button" class="ui-icon-nodisc ui-icon-alt" data-corners="false" data-icon="bars" data-iconpos="notext">Menu</a><h1>Screen ' + num + ':<br>' + title + '</h1><a href="#home" data-role="button" class="ui-icon-nodisc ui-btn-right ui-icon-alt" data-corners="false" data-theme="c" data-icon="home" data-iconpos="notext">Home</a>');
             
                     $('#screenView' + num).append($('<div />', {
                         'data-role': 'content',
                         id: 'video' + num
                     }));
+            
                     $('#video' + num).html('<video id="myMovie0' + num + '" controls fullscreen width="100%" height="100%" poster="icon.png"><source src="http://www.skillpad.com/uploads/videos/Screen_0' + num + '.mp4" type="video/mp4">No connection! Please try again.</video>');
             
-                    $('#screenView' + num).append($('<div />', {
+/*                    $('#screenView' + num).append($('<div />', {
                         'data-role': 'footer',
                         'data-position': 'fixed',
                         id: 'footer' + num
                     }));
+            
                     $('#footer' + num).append($('<div />', {
                         'data-role': 'navbar',
                         'data-iconpos': 'right',
                         id: 'navbar' + num
                     }));
+            
                     $('#navbar' + num).append($('<ul>', {
                         html: '<li><a href="#menu" id="menuButton" data-role="button" data-icon="bars">Menu</a></li>'
                     }));
-            
+            */
 ///////////////////Creates the menu screen//////////////// 
     
                     collapseList.append($('<div>', {
                         'data-role': 'collapsible',
                         id: 'collapseList' + num,
-                        'data-theme': 'e',
-                        'class': 'ui-icon-alt'
+                        'data-theme': 'a',
+                        'class': 'ui-icon-alt',
+                        'data-icon':'false'
                     }));
             
                     $('#collapseList' + num).html('<h3>' + title + '</h3><p><a href="#screenView' + num + '">Click to view Screen ' + num + '</a></p><p>' + content + '</p>');
@@ -128,11 +130,13 @@ jsonTitles(function(titles){
         /*$('head').append('<link rel="stylesheet" href="css/index.css"/>');*/
         $('head').append('<script src="js/jquery.mobile-1.3.2.min.js"></script>');
         $('#home').attr('id', 'home');
-        $(document).on('pagebeforeshow', function(){
+    
+    
+       /* $(document).on('pagebeforeshow', function(){
             $.mobile.activePage.find(".ui-header a.ui-btn-left").addClass("ui-btn-icon-notext");
             $.mobile.activePage.find(".ui-header a.ui-btn-left").addClass("ui-icon-nodisc ui-icon-alt");
             $.mobile.activePage.find(".ui-header a.ui-btn-left").removeClass("ui-btn-icon-left");
-        });
+        });*/
 		
     
    /* menuList.attr({
@@ -145,8 +149,8 @@ jsonTitles(function(titles){
     
 });
 
-$( document ).on( "pageinit", "#demo-page", function() {
-    $( document ).on( "swipeleft swiperight", "#demo-page", function( e ) {
+$( document ).on( "pageinit", "#home", function() {
+    $( document ).on( "swipeleft swiperight", "#home", function( e ) {
         // We check if there is no open panel on the page because otherwise
         // a swipe to close the left panel would also open the right panel (and v.v.).
         // We do this by checking the data that the framework stores on the page element (panel: open).
