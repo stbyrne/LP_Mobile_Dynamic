@@ -73,7 +73,7 @@ jsonTitles(function(titles){
                         id: 'header' + num
                     }));
             
-                    $('#header' + num).html('<a href="#left-panel" data-role="button" class="ui-icon-nodisc ui-icon-alt" data-corners="false" data-icon="bars" data-iconpos="notext">Menu</a><h1>Screen ' + num + ':<br>' + title + '</h1><a href="#home" data-role="button" class="ui-icon-nodisc ui-btn-right ui-icon-alt" data-corners="false" data-theme="c" data-icon="home" data-iconpos="notext">Home</a>');
+                    $('#header' + num).html('<a href="#left-panel" class="ui-icon-nodisc" data-role="none"><img src="images/menu.png" width="45px" height="45px"/></a><h1>Screen ' + num + ':<br>' + title + '</h1><a href="#home" class="ui-icon-nodisc" data-role="none"><img src="images/home.png" width="55px" height="40px"/></a>');
             
                     $('#screenView' + num).append($('<div />', {
                         'data-role': 'content',

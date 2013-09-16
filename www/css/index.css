@@ -4,7 +4,7 @@
     text-overflow: ellipsis !important;
 }
 #lessoncode{
-    padding-left: .6em;
+    padding-left: 1.8em !important;
     font: .8em Calibri, Arial, Verdana, sans-serif !important;
 }
 #left-panel span{
@@ -63,8 +63,8 @@ span{
 	text-align: left !important;
 	/*min-height: 2.5em;*/
 	font: bold 1em Calibri, Arial, Verdana, sans-serif !important;
-    /*padding-right: .2em !important;
-	padding-left: 1em !important;*/
+    /*padding-right: .2em !important;*/
+	padding-left: 1em !important;
 	margin: .6em 2.5em !important;
 	text-overflow: ellipsis !important;
 }
