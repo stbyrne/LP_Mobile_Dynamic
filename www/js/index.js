@@ -30,6 +30,8 @@ jsonTitles(function(titles){
             menuList = $('#list'),
             collapseList = $('#collapseList'),
             listLeft = $('#listLeft'),
+            logLeft = $('#loglistLeft'),
+            menuLeft = $('#menulistLeft'),
             $screen = $(titles.course.section.screen),
             $body = $('body');
             
@@ -53,13 +55,7 @@ jsonTitles(function(titles){
                             id: 'Screen_0' + num,
                         }).html('<a href="#screenView' + num + '"><img src="images/screen' + num + '.png"><h2>' + title + '</h2><p>' + desc +'</p><p class="ui-li-aside">empty</p></a>'));
             
-///////////////////Creates the left slide list of screens////////////////
-            
-                    listLeft.append(
-                        $('<li />', {
-                            'class': 'lesson'
-                        }).html('<a href="#screenView' + num + '"><span>' + title + '</span></a>'));
-            
+        
  ///////////////////Creates the individual pages for each screen////////////////
                     $body.append($('<div />', {
                         id: 'screenView' + num,
@@ -80,24 +76,24 @@ jsonTitles(function(titles){
                         id: 'video' + num
                     }));
             
-                    $('#video' + num).html('<video id="myMovie0' + num + '" class="media" controls fullscreen poster="icon.png"><source src="http://www.skillpad.com/uploads/videos/Screen_0' + num + '.mp4" type="video/mp4">No connection! Please try again.</video>');
+                    $('#video' + num).html('<video id="myMovie0' + num + '" controls fullscreen width="100%" height="100%" poster="icon.png"><source src="http://www.skillpad.com/uploads/videos/Screen_0' + num + '.mp4" type="video/mp4">No connection! Please try again.</video>');
             
-/*                    $('#screenView' + num).append($('<div />', {
-                        'data-role': 'footer',
-                        'data-position': 'fixed',
-                        id: 'footer' + num
-                    }));
+                    $('#screenView' + num).append($('<div />', {
+                        'data-role': 'panel',
+                        id: 'left-panel',
+                        'data-theme': 'd'
+                    }).html('<p>Screens</p>').each(function(){
+                        
+                            $(this).append($('<div />', {
+                                'data-role': 'content'
+                            }).append($('<ul />', {
+                                    'data-role': 'listview',
+                                    'class': 'ui-icon-alt'
+                                    })
+                                ))
+                            }));
+///////////////////Loop for Menu within screen pages, ie loop within loop/////////////////
             
-                    $('#footer' + num).append($('<div />', {
-                        'data-role': 'navbar',
-                        'data-iconpos': 'right',
-                        id: 'navbar' + num
-                    }));
-            
-                    $('#navbar' + num).append($('<ul>', {
-                        html: '<li><a href="#menu" id="menuButton" data-role="button" data-icon="bars">Menu</a></li>'
-                    }));
-            */
 ///////////////////Creates the menu screen//////////////// 
     
                     collapseList.append($('<div>', {
@@ -109,17 +105,24 @@ jsonTitles(function(titles){
                     }));
             
                     $('#collapseList' + num).html('<h3>' + title + '</h3><p><a href="#screenView' + num + '">Click to view Screen ' + num + '</a></p><p>' + content + '</p>');
-    
-    
-//////////////////////////////////////////////////////////
             
-            });
-        	
+                    });//////End of Loop//////
+    
+        $(screenList).each(function(i){
+                var numlist = i + 1;
+               
+                $('[data-role="panel"] ul:not(#listLeft_2)').append(
+                            $('<li />', {
+                                'class': 'lesson',
+                                'data-theme': 'c'
+                            }).html('<a href="#screenView' + numlist + '"><span>' + this + '</span></a>'));
+                   
+        });
   
     
-            var lessonTitle=$('.lessonTitle'),
-                screenTitle = $('.screenTitle'),
-                lessonCode = $('.lessonCode');
+        var lessonTitle=$('.lessonTitle'),
+            screenTitle = $('.screenTitle'),
+            lessonCode = $('.lessonCode');
         
         screenTitle.html(screenList[screen - 1]);
         lessonTitle.html(moduleTitle);
@@ -131,23 +134,10 @@ jsonTitles(function(titles){
         $('head').append('<script src="js/jquery.mobile-1.3.2.min.js"></script>');
         $('#home').attr('id', 'home');
     
-    
-       /* $(document).on('pagebeforeshow', function(){
-            $.mobile.activePage.find(".ui-header a.ui-btn-left").addClass("ui-btn-icon-notext");
-            $.mobile.activePage.find(".ui-header a.ui-btn-left").addClass("ui-icon-nodisc ui-icon-alt");
-            $.mobile.activePage.find(".ui-header a.ui-btn-left").removeClass("ui-btn-icon-left");
-        });*/
-		
-    
-   /* menuList.attr({
-        'data-role': 'listview',
-        'data-theme': 'c',
-        'class': 'ui-icon-alt'
-    });*/
             
-    });
+    });///End jsonTitles Function///
     
-});
+});///End jQuery Function///
 
 $( document ).on( "pageinit", "#home", function() {
     $( document ).on( "swipeleft swiperight", "#home", function( e ) {
