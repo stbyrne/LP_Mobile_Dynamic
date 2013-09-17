@@ -5,16 +5,24 @@ $(function(){
 function jsonTitles(holdData){
 
     $.ajax({
-        type: 'GET',
+        /*type: 'GET',*/
         /*url: 'titles.json',*/
         url: 'http://www.skillpad.com/uploads/json/titles.json?callback=?',
-        async: false,
+        /*async: false,*/
         jsonpCallback: 'jsonCallback',
-        contentType: "application/json",
+        /*contentType: "application/json",*/
         dataType: 'jsonp',
-        
+        timeout: 3000,
         success: function(data) {
            holdData(data);
+        },
+        error: function() {
+           $('body').empty().append($('<div/>', {
+                
+           }).html('<img id="noconnect" src="icon.png"/>'));
+            setTimeout(function(){
+                   alert('Connection failed! Please try again.');
+            }, 1000)
         }
         
     });

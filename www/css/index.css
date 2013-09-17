@@ -1,3 +1,9 @@
+#noconnect{
+    width: 100%;
+    height: 100%;
+    
+}
+
 #mainTitle{
     margin-bottom: 0;
     font: bold 1em Calibri, Arial, Verdana, sans-serif !important;
@@ -154,6 +160,9 @@ span .ui-icon .ui-icon-plus{
 }
 /* First breakpoint is 768px. 3 column layout. Tiles 250x250 pixels at the breakpoint. */
 @media all and (min-width: 768px){
+    #logo{
+	zoom: 1.5;
+}
     .ui-icon-nodisc{
     zoom: 1.5;         
     }
