@@ -50,6 +50,13 @@
 </head>
     
 <body onload="onBodyLoad()">
+    <div id="loader">
+        <script>
+            $.mobile.pageLoading();
+        </script>
+        <img id="load" src="icon.png"/>
+        <h1 id="loadText">Loading...</h1>
+    </div>
 <!--Home Page-->
     
 	<div class="app" id="home" data-role="page">

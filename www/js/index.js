@@ -15,14 +15,15 @@ function jsonTitles(holdData){
         timeout: 3000,
         success: function(data) {
            holdData(data);
+            $('body').remove('#loader');
         },
         error: function() {
            $('body').empty().append($('<div/>', {
                 
-           }).html('<img id="noconnect" src="icon.png"/>'));
+           }).html('<div id="disconnect"><img id="noconnect" src="icon.png"/><div>'));
             setTimeout(function(){
-                   alert('Connection failed! Please try again.');
-            }, 1000)
+                   alert('Unable to connect! Please try again.');
+            }, 500)
         }
         
     });

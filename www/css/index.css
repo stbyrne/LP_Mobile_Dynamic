@@ -1,9 +1,26 @@
 #noconnect{
-    width: 100%;
-    height: 100%;
-    
+    width: 70%;
+    align-content:center;
 }
-
+#disconnect{
+    text-align:center;
+    height: 100% !important;
+}
+#load{
+    width: 70%;
+    align-content:center;
+}
+#loader{
+    text-align:center;
+    background: -webkit-linear-gradient(top, #848484, #1d1d1d) !important;
+    height: 100%;
+}
+#loadText{
+    font: bold 2.5em Calibri, Arial, Verdana, sans-serif !important;
+    color: #f0f0f0 !important;
+    bottom: 0 !important;
+    text-align: center !important;
+}
 #mainTitle{
     margin-bottom: 0;
     font: bold 1em Calibri, Arial, Verdana, sans-serif !important;
