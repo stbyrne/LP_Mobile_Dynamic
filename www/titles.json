@@ -1,5 +1,4 @@
-jsonCallback(
-	{"course": {
+[{"course": {
         "moduleTitle": "Skillpad Mobile Lesson Player",
         "moduleCode": "Code: SMLP-001-01",
 	       "section":{
@@ -38,5 +37,4 @@ jsonCallback(
 		  ]
 		}
 	  }
-	}
-);
+	}]

@@ -2,6 +2,7 @@ $(function(){
     
 ///////////////////Ajax jsonp function to get data from json file////////////////
 		
+    
 function jsonTitles(holdData){
 
     $.ajax({
@@ -12,15 +13,20 @@ function jsonTitles(holdData){
         jsonpCallback: 'jsonCallback',
         /*contentType: "application/json",*/
         dataType: 'jsonp',
-        timeout: 3000,
+        timeout: 5000,
         success: function(data) {
-           holdData(data);
-            $('body').remove('#loader');
+            holdData(data);
+            /*$('body').remove('#loader');*/
         },
         error: function() {
-           $('body').empty().append($('<div/>', {
+            $('body').css({
+                'background-color': '#393939',
+                'margin': '200px auto',
+                'display': 'block'
+            });
+            $('body').empty().append($('<div/>', {
                 
-           }).html('<div id="disconnect"><img id="noconnect" src="icon.png"/><div>'));
+            }).html('<div id="disconnect"><img id="noconnect" src="icon.png"/><div>'));
             setTimeout(function(){
                    alert('Unable to connect! Please try again.');
             }, 500)
@@ -42,7 +48,8 @@ jsonTitles(function(titles){
             logLeft = $('#loglistLeft'),
             menuLeft = $('#menulistLeft'),
             $screen = $(titles.course.section.screen),
-            $body = $('body');
+            $body = $('body'),
+            navlist = ['login', 'menu', 'contact'];
             
     
 ///////////////////Parsing through the json file and applying variables to the different titles////////////////
@@ -52,17 +59,11 @@ jsonTitles(function(titles){
                         id = $(this).attr('id'),
                         title = $(this).attr('title'),
                         desc = $(this).attr('description'),
+                        duration = '00:00',
                         content = $(this).attr('content');
             
                     screenList.push(title);
                     $('#0' + num).html('Screen ' + num + ': ' + $(this).attr('title'));
-            
-///////////////////Creates the homepage list of screens////////////////
-            
-                    menuList.append(
-                        $('<li />', {
-                            id: 'Screen_0' + num,
-                        }).html('<a href="#screenView' + num + '"><img src="images/screen' + num + '.png"><h2>' + title + '</h2><p>' + desc +'</p><p class="ui-li-aside">empty</p></a>'));
             
         
  ///////////////////Creates the individual pages for each screen////////////////
@@ -78,14 +79,36 @@ jsonTitles(function(titles){
                         id: 'header' + num
                     }));
             
-                    $('#header' + num).html('<a href="#left-panel" class="ui-icon-nodisc" data-role="none"><img src="images/menu.png" width="45px" height="45px"/></a><h1>Screen ' + num + ':<br>' + title + '</h1><a href="#home" class="ui-icon-nodisc" data-role="none"><img src="images/home.png" width="55px" height="40px"/></a>');
+                    $('#header' + num).html('<a href="#left-panel" class="ui-icon-nodisc" data-role="none"><img src="images/menu_r.png" width="45px" height="45px"/></a><h1>Screen ' + num + ':<br>' + title + '</h1><a href="#home" class="ui-icon-nodisc" data-role="none"><img src="images/home_r.png" width="55px" height="40px"/></a>');
             
                     $('#screenView' + num).append($('<div />', {
                         'data-role': 'content',
                         id: 'video' + num
                     }));
-            
+                        
                     $('#video' + num).html('<video id="myMovie0' + num + '" controls fullscreen width="100%" height="100%" poster="icon.png"><source src="http://www.skillpad.com/uploads/videos/Screen_0' + num + '.mp4" type="video/mp4">No connection! Please try again.</video>');
+            
+//////////////////////////////////////////////////////////////////////
+            
+                    /*var duration = $('#myMovie0' + num)[0].duration;
+                    console.log(duration);*/
+                                
+///////////////////Creates the homepage list of screens////////////////
+            
+                    menuList.append(
+                        $('<li />', {
+                            id: 'Screen_0' + num,
+                        }).html('<a href="#screenView' + num + '"><img src="images/screen' + num + '.png"><h2>' + title + '</h2><p>' + desc +'</p><p class="ui-li-aside">Duration: ' + duration + '</p></a>'));
+            
+                                
+                    /*duration = $('myMovie0' + num).duration;*/
+                    /*var videoholder = $('#myMovie0' + num);
+                    duration = videoholder[0].duration;
+                    setTimeout(function(){
+                        console.log(videoholder[0].duration);
+                        
+                    }, 15000)*/
+                    
             
                     $('#screenView' + num).append($('<div />', {
                         'data-role': 'panel',
@@ -100,7 +123,14 @@ jsonTitles(function(titles){
                                     'class': 'ui-icon-alt'
                                     })
                                 ))
-                            }));
+                            }).append($('<div />').html('<p>Nav</p>').each(function(){
+                        
+                                                        $(this).append($('<ul />', {
+                                                                'id': 'listLeft_2',
+                                                                'data-role': 'listview',
+                                                                'class': 'ui-icon-alt'
+                                                                })) 
+                                                            })));
 ///////////////////Loop for Menu within screen pages, ie loop within loop/////////////////
             
 ///////////////////Creates the menu screen//////////////// 
@@ -127,6 +157,16 @@ jsonTitles(function(titles){
                             }).html('<a href="#screenView' + numlist + '"><span>' + this + '</span></a>'));
                    
         });
+    
+    $(navlist).each(function(i){
+        var navnum = i + 1;
+        
+        $('[data-role="panel"] #listLeft_2').append(
+                            $('<li />', {
+                                'class': 'lesson',
+                                'data-theme': 'c'
+                            }).html('<a href="#' + this + '"><span>' + this + '</span></a>'));
+    });
   
     
         var lessonTitle=$('.lessonTitle'),
@@ -142,11 +182,34 @@ jsonTitles(function(titles){
         /*$('head').append('<link rel="stylesheet" href="css/index.css"/>');*/
         $('head').append('<script src="js/jquery.mobile-1.3.2.min.js"></script>');
         $('#home').attr('id', 'home');
-    
+     
             
     });///End jsonTitles Function///
     
+    $('#logo').click(function(){
+        window.open('http://www.skillpad.com', '_blank');
+    
+    
+    });
+    
 });///End jQuery Function///
+
+
+
+//////////Creates Nav list for Login, Manu & Contact/////////////////
+    
+    /*$.find('#left-panel').append($('<div />', {
+                        
+                                                }).html('<p>Nav</p>').each(function(){
+                        
+                                                        $(this).append($('<ul />', {
+                                                                'id': 'listLeft_2',
+                                                                'data-role': 'listview',
+                                                                'class': 'ui-icon-alt'
+                                                                })) 
+                                                        }));*/
+    
+/////////////////////////////////////////////////////////////////////
 
 $( document ).on( "pageinit", "#home", function() {
     $( document ).on( "swipeleft swiperight", "#home", function( e ) {
