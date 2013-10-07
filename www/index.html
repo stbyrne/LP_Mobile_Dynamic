@@ -10,6 +10,7 @@
 	
 	<script type="text/javascript" charset="utf-8" src="phonegap.js" ></script>
 	<script src="js/jq.js"></script>
+    <script src="js/fastclick.js"></script>
     
 	<script>
         /*$(document).on('pagebeforeshow', function(){
@@ -19,6 +20,8 @@
         });*/
 		$(document).bind('mobileinit', function(){
 			$.mobile.defaultPageTransition="none";
+            $.mobile.defaultDialogTransition = 'none';
+            $.mobile.buttonMarkup.hoverDelay = 0;
 		});
 	</script>
     
@@ -49,151 +52,142 @@
 	
 </head>
     
-<body onload="onBodyLoad()">
-    <!--<div id="loader">
-        <script>
-            $.mobile.pageLoading();
-        </script>
-        <img id="load" src="icon.png"/>
-        <h1 id="loadText">Loading...</h1>
-    </div>-->
-<!--Home Page-->
+<body onload="onBodyLoad(); initFastButtons();">
+   <span id="fastclick">
     
-	<div class="app" id="home" data-role="page">
-	
-		<div id="mainHeader" class="title" data-role="header" data-position="fixed" data-theme="d">
-            
-                <a href="#left-panel" class="ui-icon-nodisc" data-role="none"><img src="images/menu_r.png" width="45px" height="45px"/></a>
-               
-                <h4 id="mainTitle" class="pull-left lessonTitle">Skillpad Mobile</h4>
-                <h6 id="lessoncode" class="pull-left lessonCode">Skillpad LP Mobile</h6>
-                <img id="logo" src="images/logo.png"/>
-            
-		</div>
-			
-		<div data-role="content">
-			<ul id="list" data-role="listview" data-theme="a">
-				
-			</ul>
-		</div>
-    
+        <div class="app" id="home" data-role="page">
         
-		
-        
-        <!--Slide Content Left Panel-->
-        
-        <div data-role="panel" id="left-panel" data-theme="d">
-            <p>Screens</p>
-            <div data-role="content">
-                <ul id="listLeft" data-role="listview" class="ui-icon-alt">
-				
-                </ul>
+            <div id="mainHeader" class="title" data-role="header" data-position="fixed" data-theme="d">
+                
+                    <a href="#left-panel" class="ui-icon-nodisc" data-role="none"><img src="images/menu_r.png" width="45px" height="45px"/></a>
+                   
+                    <h4 id="mainTitle" class="pull-left lessonTitle">Skillpad Mobile</h4>
+                    <h6 id="lessoncode" class="pull-left lessonCode">Skillpad LP Mobile</h6>
+                    <img id="logo" src="images/logo.png"/>
                 
             </div>
-            <div>
-                <p>Nav</p> 
-                <ul id="listLeft_2" data-role="listview" class="ui-icon-alt">
+                
+            <div data-role="content">
+                <ul id="list" data-role="listview" data-theme="a">
                     
                 </ul>
             </div>
-        </div>
-        <!--Slide Content Left Panel End-->
-		
-	</div>
-    
-
-  
-<!-------------------------------------------------------Login Page------------------------------------------------------------>
-	
-	<div id="login" data-role="page">
-	
-		<div data-role="header" data-position="fixed" data-theme="c">
-            <a href="#left-panel" class="ui-icon-nodisc" data-role="none"><img src="images/menu_b.png" width="45px" height="45px"/></a>
-			<h1>Login<br>Enter your password and click Submit.</h1>
-            
-			<a href="#home" class="ui-icon-nodisc" data-role="none"><img src="images/home_b.png" width="55px" height="40px"/></a>
-            
-		</div>
         
-		<div data-role="content">
-             
-            <div data-role="controlgroup" data-corners="true" >
-            <input type="text" />
-            <a href="#home" id="submit" data-role="button" data-theme="b" data-icon="grid" data-iconpos="right">Submit</a>
-            </div>
             
-		</div>
-		
-        <!--Slide Content Left Panel-->
-        
-        <div data-role="panel" id="left-panel" data-theme="d">
-            <div data-role="controlgroup">
+            
+            
+            <!--Slide Content Left Panel-->
+            
+            <div data-role="panel" id="left-panel" data-theme="d">
                 <p>Screens</p>
-            </div>
-            <div data-role="content">
-                <ul id="loglistLeft" data-role="listview" class="ui-icon-alt">
-				
-                </ul>
-                
-            </div>
-            <div>
-                <p>Nav</p> 
-                <ul id="listLeft_2" data-role="listview" class="ui-icon-alt">
+                <div data-role="content">
+                    <ul id="listLeft" data-role="listview" class="ui-icon-alt">
                     
-                </ul>
-            </div>
-        </div>
-        <!--Slide Content Left Panel End-->
-  
-    </div>
-
-<!-------------------------------------------------------------------------------------------------------------------->
-
-	<div id="menu" data-role="page"><!--Menu page-->
-	
-		<div data-role="header" data-position="fixed" data-theme="c">
-            <a href="#left-panel" class="ui-icon-nodisc" data-role="none"><img src="images/menu.png" width="45px" height="40px"/></a>
-            
-			<h1>Menu:<br>Screen breakdown and content in each</h1>
-            <a href="#home" class="ui-icon-nodisc" data-role="none"><img src="images/home.png" width="55px" height="40px"/></a>
-		</div>
-		
-		<div data-role="content">
-            
-            <div id="collapseList" data-role="collapsible-set" data-corners="true">
-            <h4>Screen List:</h4>
-            <h6>Tap each title to expand</h6>
-            </div>
-
-        </div>
-        <!--Slide Content Left Panel-->
-        
-        <div data-role="panel" id="left-panel" data-theme="d">
-            <div data-role="controlgroup">
-                <p>Screens</p>
-            </div>
-            <div data-role="content">
-                <ul id="menulistLeft" data-role="listview" class="ui-icon-alt">
-				
-                </ul>
-                
-            </div>
-            <div>
-                <p>Nav</p> 
-                <ul id="listLeft_2" data-role="listview" class="ui-icon-alt">
+                    </ul>
                     
-                </ul>
+                </div>
+                <div>
+                    <p>Nav</p> 
+                    <ul id="listLeft_2" data-role="listview" class="ui-icon-alt">
+                        
+                    </ul>
+                </div>
             </div>
+            <!--Slide Content Left Panel End-->
+            
         </div>
-        <!--Slide Content Left Panel End-->
-			
-		
-		
-   </div>
-        
-
         
     
+      
+    <!-------------------------------------------------------Login Page------------------------------------------------------------>
+        
+        <div id="login" data-role="page">
+        
+            <div data-role="header" data-position="fixed" data-theme="c">
+                <a href="#left-panel" class="ui-icon-nodisc" data-role="none"><img src="images/menu_b.png" width="45px" height="45px"/></a>
+                <h1>Login<br>Enter your password and click Submit.</h1>
+                
+                <a href="#home" class="ui-icon-nodisc" data-role="none"><img src="images/home_b.png" width="55px" height="40px"/></a>
+                
+            </div>
+            
+            <div data-role="content">
+                 
+                <div data-role="controlgroup" data-corners="true" >
+                <input type="text" />
+                <a href="#home" id="submit" data-role="button" data-theme="b" data-icon="grid" data-iconpos="right">Submit</a>
+                </div>
+                
+            </div>
+            
+            <!--Slide Content Left Panel-->
+            
+            <div data-role="panel" id="left-panel" data-theme="d">
+                <div data-role="controlgroup">
+                    <p>Screens</p>
+                </div>
+                <div data-role="content">
+                    <ul id="loglistLeft" data-role="listview" class="ui-icon-alt">
+                    
+                    </ul>
+                    
+                </div>
+                <div>
+                    <p>Nav</p> 
+                    <ul id="listLeft_2" data-role="listview" class="ui-icon-alt">
+                        
+                    </ul>
+                </div>
+            </div>
+            <!--Slide Content Left Panel End-->
+      
+        </div>
+    
+    <!-------------------------------------------------------------------------------------------------------------------->
+    
+        <div id="menu" data-role="page"><!--Menu page-->
+        
+            <div data-role="header" data-position="fixed" data-theme="c">
+                <a href="#left-panel" class="ui-icon-nodisc" data-role="none"><img src="images/menu.png" width="45px" height="40px"/></a>
+                
+                <h1>Menu:<br>Screen breakdown and content in each</h1>
+                <a href="#home" class="ui-icon-nodisc" data-role="none"><img src="images/home.png" width="55px" height="40px"/></a>
+            </div>
+            
+            <div data-role="content">
+                
+                <div id="collapseList" data-role="collapsible-set" data-corners="true">
+                <h4>Screen List:</h4>
+                <h6>Tap each title to expand</h6>
+                </div>
+    
+            </div>
+            <!--Slide Content Left Panel-->
+            
+            <div data-role="panel" id="left-panel" data-theme="d">
+                <div data-role="controlgroup">
+                    <p>Screens</p>
+                </div>
+                <div data-role="content">
+                    <ul id="menulistLeft" data-role="listview" class="ui-icon-alt">
+                    
+                    </ul>
+                    
+                </div>
+                <div>
+                    <p>Nav</p> 
+                    <ul id="listLeft_2" data-role="listview" class="ui-icon-alt">
+                        
+                    </ul>
+                </div>
+            </div>
+            <!--Slide Content Left Panel End-->
+                
+            
+            
+       </div>
+       
+    </span>
 	
 </body>
 </html>
