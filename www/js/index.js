@@ -195,19 +195,6 @@ jsonTitles(function(titles){
 });///End jQuery Function///
 
 
-
-//////////Creates Nav list for Login, Manu & Contact/////////////////
-    
-    /*$.find('#left-panel').append($('<div />', {
-                        
-                                                }).html('<p>Nav</p>').each(function(){
-                        
-                                                        $(this).append($('<ul />', {
-                                                                'id': 'listLeft_2',
-                                                                'data-role': 'listview',
-                                                                'class': 'ui-icon-alt'
-                                                                })) 
-                                                        }));*/
     
 /////////////////////////////////////////////////////////////////////
 
@@ -226,16 +213,6 @@ $( document ).on( "pageinit", "#home", function() {
     });
 });
 
-
-
-
-
-
-
-
-/*.append($('<h1>', {
-                        html: 'Screen ' + num + ':<br>' + title
-                    }))*/
 
 	
 
