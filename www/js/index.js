@@ -118,7 +118,7 @@ jsonTitles(function(titles){
                         'data-role': 'panel',
                         id: 'left-panel',
                         'data-theme': 'd'
-                    }).html('<p>Screens</p>').each(function(){
+                    }).html('<p>Menu</p>').each(function(){
                         
                             $(this).append($('<div />', {
                                 'data-role': 'content'
@@ -127,14 +127,7 @@ jsonTitles(function(titles){
                                     'class': 'ui-icon-alt'
                                     })
                                 ))
-                            }).append($('<div />').html('<p>Nav</p>').each(function(){
-                        
-                                                        $(this).append($('<ul />', {
-                                                                'id': 'listLeft_2',
-                                                                'data-role': 'listview',
-                                                                'class': 'ui-icon-alt'
-                                                                })) 
-                                                            })));
+                            }));
 ///////////////////Loop for Menu within screen pages, ie loop within loop/////////////////
             
 ///////////////////Creates the menu screen//////////////// 
@@ -165,7 +158,7 @@ jsonTitles(function(titles){
     $(navlist).each(function(i){
         var navnum = i + 1;
         
-        $('[data-role="panel"] #listLeft_2').append(
+        $('[data-role="panel"] ul').append(
                             $('<li />', {
                                 'data-theme': 'd'
                             }).html('<a href="#' + this + '"><span>' + this + '</span></a>'));
@@ -183,11 +176,11 @@ jsonTitles(function(titles){
         /*$('head').append('<link rel="stylesheet" href="css/index.css"/>');
         $('head').append('<link rel="stylesheet" href="js/jquery.mobile-1.3.2.min.css" />');*/
         /*$('head').append('<link rel="stylesheet" href="js/jquery.mobile.structure-1.3.2.min.css" />');*/
-        
+    
         $('head').append('<script src="js/jquery.mobile-1.3.2.min.js"></script>');
         $('#home').attr('id', 'home');
-     
-            
+        
+        
     });///End jsonTitles Function///
     
     $('#logo').click(function(){
@@ -196,13 +189,7 @@ jsonTitles(function(titles){
     
     });
     
-});///End jQuery Function///
-
-
-    
-/////////////////////////////////////////////////////////////////////
-
-$( document ).on( "pageinit", "#home", function() {
+    $( document ).on( "pageinit", "#home", function() {
     $( document ).on( "swipeleft swiperight", "#home", function( e ) {
         // We check if there is no open panel on the page because otherwise
         // a swipe to close the left panel would also open the right panel (and v.v.).
@@ -216,6 +203,18 @@ $( document ).on( "pageinit", "#home", function() {
         }
     });
 });
+    
+    
+    
+});///End jQuery Function///
+
+
+
+
+    
+/////////////////////////////////////////////////////////////////////
+
+
 
 
 	

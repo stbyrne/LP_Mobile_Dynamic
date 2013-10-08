@@ -21,6 +21,7 @@
     bottom: 0 !important;
     text-align: center !important;
 }
+
 #mainTitle{
     margin-bottom: 0;
     font: bold 1em Calibri, Arial, Verdana, sans-serif !important;
@@ -32,6 +33,10 @@
 }
 #left-panel span{
     font: .6em Calibri, Arial, Verdana, sans-serif !important;
+}
+#left-panel p{
+    font: bold 1.6em Calibri, Arial, Verdana, sans-serif !important;
+    color: rgba(210, 0, 0, .85);
 }
 
 .ui-collapsible-heading .ui-btn-text {
