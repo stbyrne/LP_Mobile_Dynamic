@@ -48,14 +48,12 @@
 	width: 5em;
 	height: 1em;
     position: absolute;
-    cursor: pointer;
 }
 .lessonTitle{
 	text-align: left;
 	font-size: 1em;
 	padding-left: 1.5em;
 }
-
 #homeButton{
 	float: right;
 }
@@ -120,7 +118,7 @@ span{
     color: #7b7b7b;
 }
 .ui-collapsible-content{
-    background: -webkit-linear-gradient(top, #fcfcfc, #ededed) !important;   
+    background: -webkit-linear-gradient(top, #feffff, #f0fbff) !important;   
 }
 h1, h2, h3, h4, h5, h6, p{
     font-family: Calibri, Arial, Verdana, sans-serif !important;
@@ -171,7 +169,7 @@ span .ui-icon .ui-icon-plus{
     color: #c0c0c0;
 }
 .app .ui-li-aside {
-    color: rgb(210, 0, 0);
+    color: #6ab4ff;
 }
 .app .ui-listview .ui-li.ui-btn {
     background-image: none;
@@ -180,7 +178,7 @@ span .ui-icon .ui-icon-plus{
 /* First breakpoint is 768px. 3 column layout. Tiles 250x250 pixels at the breakpoint. */
 @media all and (min-width: 768px){
     #logo{
-	zoom: 2;
+	zoom: 1.5;
 }
     .ui-icon-nodisc{
     zoom: 1.5;         
@@ -301,9 +299,9 @@ span .ui-icon .ui-icon-plus{
         left: auto;
         bottom: auto;
         /* Custom styling. */
-        color: #fff;
-        background: rgb(210, 0, 0);
-        background: rgba(210, 0, 0,.85);
+        color: #c0c0c0;
+        background: #6ab4ff;
+        background: rgba(153,0,153,.85);
         -webkit-border-top-right-radius: inherit;
         border-top-right-radius: inherit;
         -webkit-border-bottom-left-radius: inherit;

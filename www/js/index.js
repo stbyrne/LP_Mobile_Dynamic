@@ -16,6 +16,7 @@ function jsonTitles(holdData){
         timeout: 5000,
         success: function(data) {
             holdData(data);
+            
             /*$('body').remove('#loader');*/
         },
         error: function() {
@@ -59,11 +60,17 @@ jsonTitles(function(titles){
                         id = $(this).attr('id'),
                         title = $(this).attr('title'),
                         desc = $(this).attr('description'),
-                        duration = '00:00',
-                        content = $(this).attr('content');
+                        content = $(this).attr('content'),
+                        duration = '00:00';
             
                     screenList.push(title);
                     $('#0' + num).html('Screen ' + num + ': ' + $(this).attr('title'));
+            
+            
+                    menuList.append(
+                                $('<li />', {
+                                    id: 'Screen_0' + num,
+                                }).html('<a href="#screenView' + num + '"><img src="images/screen' + num + '.png"><h2>' + title + '</h2><p>' + desc +'</p><p class="ui-li-aside">Duration: ' + duration + '</p></a>'));
             
         
  ///////////////////Creates the individual pages for each screen////////////////
@@ -95,10 +102,7 @@ jsonTitles(function(titles){
                                 
 ///////////////////Creates the homepage list of screens////////////////
             
-                    menuList.append(
-                        $('<li />', {
-                            id: 'Screen_0' + num,
-                        }).html('<a href="#screenView' + num + '"><img src="images/screen' + num + '.png"><h2>' + title + '</h2><p>' + desc +'</p><p class="ui-li-aside">Duration: ' + duration + '</p></a>'));
+                    
             
                                 
                     /*duration = $('myMovie0' + num).duration;*/
@@ -153,7 +157,7 @@ jsonTitles(function(titles){
                 $('[data-role="panel"] ul:not(#listLeft_2)').append(
                             $('<li />', {
                                 'class': 'lesson',
-                                'data-theme': 'c'
+                                'data-theme': 'd'
                             }).html('<a href="#screenView' + numlist + '"><span>' + this + '</span></a>'));
                    
         });
@@ -163,8 +167,7 @@ jsonTitles(function(titles){
         
         $('[data-role="panel"] #listLeft_2').append(
                             $('<li />', {
-                                'class': 'lesson',
-                                'data-theme': 'c'
+                                'data-theme': 'd'
                             }).html('<a href="#' + this + '"><span>' + this + '</span></a>'));
     });
   
@@ -177,9 +180,10 @@ jsonTitles(function(titles){
         lessonTitle.html(moduleTitle);
         lessonCode.html(moduleCode);
     
-        /*$('head').append('<link rel="stylesheet" href="js/jquery.mobile-1.3.2.min.css" />');
-        $('head').append('<link rel="stylesheet" href="js/jquery.mobile.structure-1.3.2.min.css" />');*/
-        /*$('head').append('<link rel="stylesheet" href="css/index.css"/>');*/
+        /*$('head').append('<link rel="stylesheet" href="css/index.css"/>');
+        $('head').append('<link rel="stylesheet" href="js/jquery.mobile-1.3.2.min.css" />');*/
+        /*$('head').append('<link rel="stylesheet" href="js/jquery.mobile.structure-1.3.2.min.css" />');*/
+        
         $('head').append('<script src="js/jquery.mobile-1.3.2.min.js"></script>');
         $('#home').attr('id', 'home');
      
